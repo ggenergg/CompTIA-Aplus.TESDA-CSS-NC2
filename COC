@@ -1,0 +1,457 @@
+COURSE OUTLINE COMPETENCIES (COC) of TESDA CSS NCII
+
+In Technical Education and Skills Development Authority (TESDA) Computer Systems Servicing NC II (CSS NC II), 
+you need to complete 4 Certificates of Competency (COCs) to earn the National Certificate (NC II).
+
+COCs for CSS NC II
+
+COC 1 – Install and Configure Computer Systems
+-Assemble/disassemble computer
+-Install operating system and drivers
+-Configure BIOS
+-Install application software
+
+COC 2 – Set-up Computer Networks
+-Create LAN cables (straight-through & crossover)
+-Configure router and Wi-Fi
+-Set up wireless access point
+-Test network connection
+
+COC 3 – Set-up Computer Servers
+-Configure server OS
+-Create domain and user accounts
+-Set up DHCP, DNS, file and printer sharing
+-Enable remote desktop
+
+COC 4 – Maintain and Repair Computer Systems and Networks
+-Troubleshoot hardware/software issues
+-Virus scanning and removal
+-Backup and restore systems
+-Maintain network and system performance
+
+✔ When you pass all 4 COCs, TESDA will issue the CSS NC II National Certificate.
+
+💡 Tip: Some training centers let you take each COC separately, then once you complete all four, you can apply for the full NC II assessment.
+
+==================================================
+
+The actual tasks you do during the TESDA CSS NC II assessment (the practical exam):
+
+During the actual assessment for Computer Systems Servicing NC II (CSS NC II) under the Technical Education and Skills Development Authority (TESDA), 
+the assessor will usually give you hands-on practical tasks. These tasks simulate what a real computer technician does in the workplace. 💻🔧
+
+Below are the common practical tasks candidates are asked to perform.
+
+1️⃣ PC Assembly and Disassembly
+
+You may be asked to:
+-Identify computer parts (RAM, HDD/SSD, PSU, motherboard, etc.)
+-Disassemble a computer system unit
+-Assemble the computer correctly
+-Connect internal cables (SATA, power connectors)
+-Connect external peripherals (monitor, keyboard, mouse)
+
+⚠️ The assessor checks if you follow proper ESD and safety procedures.
+
+
+
+2️⃣ Install and Configure Operating System
+
+Typical tasks include:
+-Boot using USB installer or DVD
+-Install Windows OS or Linux
+-Partition the hard drive
+-Install device drivers
+-Install basic application software (browser, office tools)
+
+You may also be asked to:
+-Configure user accounts
+-Change system settings
+
+
+
+3️⃣ Create and Test Network Cable
+-This is a very common task. You may be required to:
+-Make a straight-through LAN cable
+-Use RJ-45 connectors
+-Follow T568A or T568B wiring standard
+-Use a crimping tool
+-Test the cable using a LAN tester
+🔌 The cable must pass the tester to be considered correct.
+
+
+
+4️⃣ Setup a Small Network
+
+You might be instructed to:
+-Connect 2–3 computers to a switch/router
+-Configure IP addresses
+-Set subnet mask and gateway
+-Test connection using ping command
+
+Example:
+ping 192.168.1.2
+
+The assessor checks if the computers can communicate on the network.
+
+
+
+
+
+5️⃣ Basic Router / Wireless Setup
+
+You may need to:
+-Log in to a router admin page
+-Configure Wi-Fi SSID
+-Set a Wi-Fi password
+-Configure DHCP settings
+
+
+📶 Then test if a device can connect to the network.
+
+6️⃣ Troubleshooting Computer Problems
+
+The assessor may simulate a problem like:
+
+-Computer not booting
+-No internet connection
+-Driver missing
+-Virus infection
+
+You must:
+-Identify the problem
+-Explain the cause
+-Fix the issue
+
+
+7️⃣ Basic Preventive Maintenance
+
+You may be asked to:
+-Clean computer components
+-Perform disk cleanup or antivirus scan
+-Check cables and connections
+-Backup files
+
+
+
+
+
+✅ Assessment Tips
+-Follow ESD safety procedures
+-Always explain what you are doing to the assessor
+-Check your work before saying you are done
+-Be familiar with LAN cable color coding
+
+
+
+====================================================================================
+
+
+
+The probable questions assessors usually ask during the oral interview after the practical test:
+
+Tools/equipment you should practice before taking the test
+
+Before taking the Computer Systems Servicing NC II (CSS NC II) assessment from the Technical Education and Skills Development Authority (TESDA), 
+it’s important to practice using the common tools and equipment that computer technicians use. These are usually the same tools available during the assessment. 💻🔧
+
+  
+🔧 Hand Tools
+
+These are the basic tools you should be comfortable using:
+
+Phillips screwdriver – for opening and assembling computer cases
+
+Flat-head screwdriver – sometimes used for certain screws or connectors
+
+Long-nose pliers – for holding or bending small parts
+
+Side cutter – for cutting wires or cable ties
+
+Tweezers – for handling small components
+
+
+
+
+💡 Practice removing and reinstalling components like RAM, HDD/SSD, and power connectors.
+
+
+
+
+🌐 Networking Tools
+
+These are very important because networking is a big part of the exam.
+
+Crimping tool – used to attach RJ45 connectors to Ethernet cables
+
+LAN cable tester – checks if the cable wiring is correct
+
+Wire stripper – removes cable insulation
+
+Punch-down tool – used for patch panels or keystone jacks
+
+You should practice making:
+
+Straight-through cable
+
+Crossover cable
+
+Using T568A and T568B wiring standards
+
+
+
+
+
+🧰 Computer Hardware Components
+
+You should be able to identify and install these:
+
+Motherboard
+
+Processor (CPU)
+
+RAM
+
+Power Supply Unit (PSU)
+
+Hard Disk Drive (HDD) / Solid State Drive (SSD)
+
+Graphics card (if available)
+
+Practice:
+-Installing RAM
+-Connecting SATA and power cables
+-Installing storage drives
+
+
+
+
+
+🛡️ ESD and Safety Equipment
+
+TESDA assessors also check if you follow proper safety procedures.
+-Anti-static wrist strap
+-Anti-static mat
+-Cleaning brush or blower
+-Cable ties
+
+
+
+
+
+💻 Software / Digital Tools
+
+You should know basic use of:
+-Operating system installer (USB boot)
+-BIOS/UEFI settings
+-Disk partitioning during OS installation
+-Basic network commands like:  ipconfig, ping
+
+
+
+📡 Networking Devices
+-Practice connecting and configuring:
+-Router
+-Switch
+-Wireless access point
+-Ethernet cables
+
+You may be asked to:
+-Assign IP addresses
+-Test connectivity between computers.
+
+  
+✅ Quick Tip:
+Most candidates fail because they don’t practice LAN cable crimping enough. Make sure you can finish and test a cable correctly in a few minutes.
+
+
+
+
+===========================================================
+
+  
+A typical CSS NC II practical exam scenario so you can practice like the real test.
+
+Practical exam scenario similar to what candidates experience in the Computer Systems Servicing NC II (CSS NC II) assessment
+from the Technical Education and Skills Development Authority (TESDA). The tasks simulate a real technician job order. 💻🔧
+
+Sample CSS NC II Practical Exam Scenario:
+
+You are hired as a computer technician in a small office. The office needs a new computer system assembled and connected to a network 
+so employees can share files and access the internet.
+
+Your task is to assemble, configure, and test the system according to the requirements.
+
+Task 1 – Prepare the Work Area
+
+Before starting:
+-Wear anti-static wrist strap
+-Prepare tools (screwdriver, crimping tool, LAN tester)
+-Check all computer components
+-Follow ESD safety procedures
+
+The assessor checks if you follow proper safety and workplace procedures.
+
+
+
+
+Task 2 – Assemble the Computer
+
+You will be given computer parts such as:
+-Motherboard
+-CPU with heatsink
+-RAM
+-HDD/SSD
+-Power Supply Unit (PSU)
+-Computer case
+
+You must:
+-Install the CPU and heatsink
+-Install RAM
+-Mount the motherboard in the case
+-Install storage drive
+-Connect SATA and power cables
+-Connect front panel connectors
+
+✔ The system must power on successfully.
+
+Task 3 – Install Operating System
+
+You must install the operating system using a bootable USB.
+
+Steps usually expected:
+
+Enter BIOS/UEFI setup
+
+Set USB as first boot device
+
+Install the OS
+
+Create a user account
+
+Install device drivers
+
+Install basic software
+
+After installation:
+
+Check Device Manager
+
+Confirm no missing drivers.
+
+Task 4 – Create a Network Cable
+
+You will create a straight-through LAN cable.
+
+Requirements:
+
+Use UTP cable
+
+Follow T568B color standard
+
+Attach RJ45 connectors
+
+Use crimping tool
+
+Test cable using LAN tester
+
+Color order for T568B:
+
+White-Orange
+
+Orange
+
+White-Green
+
+Blue
+
+White-Blue
+
+Green
+
+White-Brown
+
+Brown
+
+✔ The LAN tester must show 1–8 correct connection.
+
+Task 5 – Set Up Network Connection
+
+You must connect the computer to a small network.
+
+Example configuration:
+
+IP Address:
+
+192.168.1.10
+
+
+Subnet Mask:
+
+255.255.255.0
+
+
+Default Gateway:
+
+192.168.1.1
+
+
+Then test connectivity using command prompt:
+
+ping 192.168.1.1
+
+
+If replies are received, the network is working.
+
+Task 6 – Printer or File Sharing Setup
+
+You may also be asked to:
+
+Enable file sharing
+
+Share a folder on the network
+
+Connect to a shared printer
+
+Task 7 – Troubleshooting
+
+The assessor may simulate a problem such as:
+
+Network cable not working
+
+Missing driver
+
+Incorrect IP configuration
+
+You must:
+
+Identify the problem
+
+Fix it
+
+Explain what you did
+
+Task 8 – Documentation
+
+Finally, you may be required to fill out a job order or service report including:
+
+Work performed
+
+Problems found
+
+Solutions applied
+
+Tools used
+
+✅ Typical Assessment Time
+
+4 to 8 hours total depending on the training center.
+
+⭐ Pro Tip:
+Many assessors fail candidates because they forget small details, like:
+
+Not testing the LAN cable
+
+Not installing drivers
+
+Incorrect IP address format
