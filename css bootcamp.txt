@@ -1,3 +1,6 @@
+CSS Bootcamp Walkthough of COCs (still in improvement and update...)
+
+
 Task 0: Preparing Installers on USB Flash Drive
 1. Download RUFUS (Google to serach)
 2. Prepare the following, Downloaded RUFUS and Windows ISO Installer (ISO File)
