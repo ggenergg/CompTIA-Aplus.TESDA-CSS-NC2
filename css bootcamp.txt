@@ -1,0 +1,160 @@
+Task 0: Preparing Installers on USB Flash Drive
+1. Download RUFUS (Google to serach)
+2. Prepare the following, Downloaded RUFUS and Windows ISO Installer (ISO File)
+
+-
+
+Task 1: Create Windows Installer using Rufus and Flash Drive
+1. Insert the flash drive to the computer/laptop (working)
+2. Run the downloaded Rufus
+3. Browse the ISO of the Windows Installer, click the "CD Drive" icon to browse.
+4. Click the "Log" button to see the progress when the installer is being copied
+5.On the "partition scheme and target system type", select the following if...:
+
+ - use "MBR partition scheme for BIOS" if the computer/laptop is 2012 model and earlier or Windows 8 and above is not its native OS.
+
+ - use "GPT Partition Scheme" if the computer/laptop is 2013 model and above, or Windows 8 and above is its native OS.
+
+6. Select the file system as NTFS if the ISO is 5GB and above.
+
+7. Double check all the settings, if everything is OK, click START and wait to finish.
+
+Warning: Flash Drive to be created as Windows Installers will be automatically FORMATTED.
+
+-
+
+Task 2: Installing Windows
+*Make sure that USB Storage or USB Devices is in the first boot priority in BIOS/CMOS settings.
+
+1. Insert the Installer created in USB Flash Drive.
+2. Wait until the boot is complete
+3. If windows 7, click Install. If Windows Server 2008, select "My Language is English",  click NEXT, and INSTALL NOW.
+4. If Windows 7, select WINDOWS 7 PROFESSIONAL, and click NEXT. If Windows Server 2008, select "WINDOWS SERVER 2008 R2 STANDARD (FULL INSTALLATION), and click NEXT.
+5. On both Windows, check the "I accept....", then click NEXT.
+6. Installation type to be used is CUSTOM. click CUSTOM (Advanced).
+7. Select the partition where windows to be installed.
+
+Optional, click the "Drive Options (advanced)" if you want or needed to adjust the partition settings (splitting into multiple drive volumes). 
+
+*If there is existing allocated partition, delete/format the partion where windows is to be installed.
+
+8. On the select partition where windows to be install, click NEXT, and wait for the installation to finish.
+
+-
+
+Task 3: Setting up windows for the first time.
+
+In Windows 7: 
+1. Type the username "(anything you want)", automatically the computer name will add "PC" from the username, then click NEXT.
+2. Skip the password, leave it all blank, and click NEXT.
+3. Skip the Product Key, uncheck the "Automatically Activate..." then click NEXT.
+4. click "Ask Me Later" (Red X Shield) then click NEXT.
+5. Skip the timezone, click NEXT
+6. Wait for the desktop to be appeared.
+7. Click START, then right-click on the COMPUTER then "Show the Desktop", double-click the COMPUTER on the desktop then the flash drive where to Install the driver pack.
+8. Wait the driver pack to be installed, then restart the computer when completed, and prepare the setup for Windows Server 2008.
+
+In Windows Server 2008 R2:
+1.Click OK
+2. Input the new password (password must be a combination of Capital Letter, small letter, and numbers, and at least 8 characters), and click OK.
+3. Wait for the desktop to be appeared, then click START, then right-click on the COMPUTER and select "Show the Desktop, then on Desktop, double-click the COMPUTER, then the flash drive where to install the driver pack.
+4.Wait the driver pack to be installed, then click START and type "sysdm.cpl"
+5.When the System Properties appeared, click the CHANGE button, then replace the computer name into "server-pc", the click OK, and restart the computer.
+6. After restarting the Server, Presss CTRL+ALT+DEL, and login as Administrator.
+7.click START and type "ncpa.cpl" then press enter.
+8. Right-Click the LOCAL AREA CONNECTION and select PROPERTIES.
+9. Click the "INTERNET PROTOCOL Version 4" and click PROPERTIES button.
+10. Select the second option which is "USE THE FOLLOWING IP ADDRESS "192.168.0.x", the "x" means the number between 2 to 253 and it will not conflict to other PC.
+11. Click the blank in the SUBNET Mask, and it will automatically set to 255.255.255.0
+12. In the DEFAULT GATEWAY, input 192.168.0.y ("y" means the value of the IP Address of the ROUTER), same value to the PREFFRED DNS the click OK, and close the settings.
+
+Task 4: Installing Active Directory and Domain Services (ADDS) in Server PC.
+1. Click the Server Manager icon located beside START Button.
+2. From the left side, click ROLES, then find and click "ADD ROLES".
+3. Click NEXT, then select the second option "ACTIVE DIRECTORY DOMAIN SERVICES", if .NET 3.5 wants to be added, click the ADD REQUIRED FEATURES button, then click NEXT.
+4. Click NEXT, and INSTALL, and wait for the installation to complete.
+5. Click CLOSE, the click START Button, and type "DCPROMO" and press enter
+6. Click NEXT, NEXT, select "Create a new domain in a new forest", then click next.
+7. Input "domain.nnhs.edu" then click NEXT.
+8. Select the "Forest Functional Level" into "Windows Server 2008 R2", then click NEXT.
+9. Click NEXT, click YES, NEXT, input the Administrator password, NEXT, wait for the install to complete, DO NOT CHECK "Reboot on Completion", click FINISH and DO NOT RESTART NOW.
+10. Right click on the LAN icon, beside the system clock, the select OPEN NETWORK AND SHARING CENTER.
+11. On the the left side, click CHANGE ADVANCED SHARING SETTINGS
+12. Turn on the following: NETWORK DISCOVERY and FILE SHARING, in all profiles and click SAVE CHANGES.
+13. On the right side, click WINDOWS FIREWALL > TURN WINDOWS FIREWALL ON/OFF > turn off all the settings > OK  
+14. Restart the Server.
+
+Task 5: Installing Additional File Services Role
+1. Click the Server Manager icon located beside START Button.
+2. Find the FILE SERVICES section, and click ADD ROLE SERVICES
+3. Check the FILE SERVER RESOURCE MANAGER and WINDOWS SEARCH, click NEXT
+4. Select the drives that will take effect the File Services, Volume to Index, then install.
+
+Task 6: Installing DHCP (Dynamic Host Configuration Protocol):
+1. Click the Server Manager icon located beside START Button.
+2. From the left side, click ROLES, then find and click "ADD ROLES".
+3. Click NEXT, from the left side select "DHCP Server"  
+4. Click NEXT, NEXT, on the PREFERED DNS SERVER IPv4 ADDRESS, input the IP Address of the server, then click VALIDATE, it should be VALID, then click NEXT.
+5. Click NEXT, click ADD for DHCP Scope, specify the scope name (anything), the input the STARTING IP ADDRESS: 192.168.0.2, ENDING IP ADDRESS: 192.168.0.9, and the Default GateWay (Optional): [router's IP address] then click OK, and click NEXT.
+6. Select the DISABLE DHCP v6....., click NEXT.
+7. Click NEXT, INSTALL
+
+Task 8: Joining the Client PC into Domain (Windows 7).
+*If there is "SET NETWORK LOCATION", always select WORK.
+1.Click START and type "sysdm.cpl"
+2. click CHANGE
+3. Select DOMAIN, and input "domain.nnhs.edu" and click OK
+4. Input the Server's Administrator account and password.
+5. After authentication, click OK and Restart the Client PC.
+
+Task 9: Adding user accounts in the domain server.
+1. Click START > Administrative Tools > Active Directory Users and Computers
+2. Click the plus (+) of the "domain.nnhs.edu", and right-click the "domain.nnhs.edu", select NEW > ORGANIZATIONAL UNIT.
+3. Input the name of the OU (anything).
+4. Right-click the created OU, select NEW > USER
+5. Input the Name of user, and the login name of the user, the click NEXT.
+6. Input the password of that account, and uncheck all of the other options, click NEXT, FINISH.
+
+
+Task 10: Creating a Shared Resources (Shared Folder for Example)
+1. Open the COMPUTER in the Desktop
+2. Select the drive where the resources to be shared.
+3. Create a folder for sharing (ex. shares)
+4. Right-click the created folder to be shared, and select SHARE WITH > SPECIFIC PEOPLE.
+5. Input "DOMAIN USERS", and click ADD, the in the list below, select the DOMAIN USERS, click the small arrow on the right, and select READ/WRITE, and click SHARE, and close.
+
+
+
+Task 11: Setting Up FOLDER REDIRECTION
+1. Click START > ADMINISTRATIVE TOOLS > GROUP POLICY MANAGEMENT
+2. Expand (+) FOREST: domain.nnhs.edu , (+)DOMAINS, (+)domain.nnhs.edu , (+)(the created OU earlier), right-click the created OU earlier and select CREATE A GPO IN THIS DOMAIN...
+3. Input (replace) the value for the New GPO (anything), click OK
+4. Right-click the created GPO, select EDIT
+5. Under USER CONFIGURATION, click (+)POLICIES > Windows Settings > Folder Redirection > Desktop, right-click the DESKTOP > PROPERTIES.
+6. Under Setting: select BASIC......
+7.Click BROWSE, (+)NETWORK > SERVER-PC > SHARES > Click OK, click APPLY, YES, OK (if cannot browse, input manually "\\server-pc\shares")
+8. Back to Group Policy Management, right-click the created GPO, select ENFORCED, and restart the Server.
+
+
+Task 12: Logging IN a domain user.
+*(Server must be completely restarted) 
+On the client computer. Do the login procedures of logging in a domain user (via Switch User if the computer is joined a domain for the first time or another domain user account will be used)
+
+Task 13: Setting Up File Screening for file restrictions
+1. Open the Server Manager, find and click File Services
+2. Expand (+)File Services, (+)Share and Storage Management, (+)File Server Resource Manager, (+)File Screening Management.
+3. CLICK and Right-Click CREATE FILE SCREEN
+4. Browse for the Shared folder (SHARES)
+5. Under "Derive Properties...." Select the file type to be restricted (Text, Images, etc.), and Click CREATE.
+6. To test it, On the Client PC copy the restricted file to the desktop, it should be DENIED Copying.
+
+
+Task 14: Remote Desktop (remote control a client)
+(still in development)
+
+
+Task 15: Backup Files and Restore from Windows Backup
+(still undevelopment)
+
+
+
