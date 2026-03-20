@@ -1,5 +1,60 @@
-CSS Bootcamp Walkthough of COCs (still in improvement and update...)
+CSS Bootcamp Walkthough of COCs for Setting Up Operating Systems, Connectivity, and certain Maintenance.
 
+====================================================================================
+
+COC 1 – Install and Configure Computer Systems
+
+/* Assemble/disassemble computer &  Configure CMOS/BIOS/UEFI */
+- Before doing the Computer Systems Setup, ESD (Electro Static Discharge) must be always prevented as it may
+  cause potential damage in its electronic components, it is recommended that we wear some kind of antistatic strap,
+  anything is un-energized (unplugged), work station table must be insulated (such as having a rubber mat above)
+  and you should wear a footwear with rubber soles.
+
+- It is preferable to consult the Equipment or Motherboard's user manual since each PC or Motherboard varies
+  its architecture and no universal standard. The manual also identifies if the motherboard is using a 
+  legacy BIOS (Basic I/O System) or UEFI (Unified Extensible Firmware Interface), unmatched BIOS/UEFI Setting 
+  to the Planned Type of Hard Drive partitioning (MBR vs GPT) may result to unbootable system and potential data loss.
+
+- There are various video demonstration in YouTube on how to assmeble and disassemble every system units.
+  For much likely general apporach, it is also recommended to watch how to assemble a gaming rig PC 
+  as it provides very comprehensive details of each procedure in assembling gaming PC.
+
+- In installing Computer Hardware, most of the are keyed or shaped to guide the correct installation,
+  do not force and installation if it is not fitting it through or it may cause permanent damage.
+  Refer to the attached Computer Hardware Reference included in this repository to identify the
+  different computer hardware.
+
+- For typical troubleshooting, when a PC is energized and not functioning after assembly, typical checking
+  (while the equipment is unplugged) is the cable connections such as power to motherboard and front panel controls, 
+  remove and reinsert the RAM and make sure the terminals are clean and properly align to its slot, and if there
+  are additional peripherals in the PCI-e or NVMe Slots (such as VGA or NVMe SSD) may also need to be removed
+  and reinsert the component.
+
+-Certain systems has beeps for troubleshooting purposes. In PC assembly, beeps are known as beep codes and are used 
+ by the system's BIOS/UEFI during the Power-On Self-Test (POST) to alert you of hardware issues when the screen 
+ cannot yet display information. A single short beep typically indicates the system has passed all tests and is booting normally. 
+ 
+ If you hear anything else, the pattern usually points to a specific component. 
+   -- Memory (RAM) Issues: Often signaled by continuous long beeps, 3 short beeps, or repeated short beeps.
+      Fix: Power down and reseat the RAM modules or try testing them one at a time.
+
+   -- Video Card (GPU) Issues: Usually 1 long beep followed by 2 or 3 short beeps.
+      Fix: Ensure the graphics card is fully seated in the PCIe slot and that all power cables are connected.
+
+   -- Processor (CPU) Issues: In certain Branded PC's... Commonly 5 short beeps or a two-tone siren sound (which specifically indicates overheating or fan failure).
+                              Most of the Generic PC (assembly made) do not play any such tone or sound.
+      Fix: Check that the CPU is correctly installed and the cooler is making proper contact. If it is pinned type, make sure all the pins are intact.
+
+   -- Motherboard/System Board Issues: Can be indicated by 7 short beeps or 1 long and 1 short beep depending on the BIOS.
+
+   -- Keyboard Error: Typically 3 long beeps or 6 short beeps. 
+
+   Because there is no universal standard as said earlier, you must consult the hardware's manufacturer documentation or manual to be 100% sure of the meaning.
+
+
+______________________________________________
+
+ /* Install operating systems and drivers thereafter */
 
 Task 0: Preparing Installers on USB Flash Drive
 1. Download RUFUS (Google to serach)
@@ -45,6 +100,18 @@ Optional, click the "Drive Options (advanced)" if you want or needed to adjust t
 
 -
 
+
+
+
+============================================================
+The ceertain part where setting-up an IP Address is in partial part of COC 2 – Set-up Computer Networks
+-Create LAN cables (straight-through & crossover)
+-Configure router and Wi-Fi
+-Set up wireless access point
+-Test network connection
+
+
+
 Task 3: Setting up windows for the first time.
 
 In Windows 7: 
@@ -71,6 +138,21 @@ In Windows Server 2008 R2:
 11. Click the blank in the SUBNET Mask, and it will automatically set to 255.255.255.0
 12. In the DEFAULT GATEWAY, input 192.168.0.y ("y" means the value of the IP Address of the ROUTER), same value to the PREFFRED DNS the click OK, and close the settings.
 
+
+
+
+===========================================================================================
+
+
+
+COC 3 – Set-up Computer Servers
+-Configure server OS
+-Create domain and user accounts
+-Set up DHCP, DNS, file and printer sharing
+-Enable remote desktop
+
+
+
 Task 4: Installing Active Directory and Domain Services (ADDS) in Server PC.
 1. Click the Server Manager icon located beside START Button.
 2. From the left side, click ROLES, then find and click "ADD ROLES".
@@ -87,11 +169,13 @@ Task 4: Installing Active Directory and Domain Services (ADDS) in Server PC.
 13. On the right side, click WINDOWS FIREWALL > TURN WINDOWS FIREWALL ON/OFF > turn off all the settings > OK  
 14. Restart the Server.
 
+
 Task 5: Installing Additional File Services Role
 1. Click the Server Manager icon located beside START Button.
 2. Find the FILE SERVICES section, and click ADD ROLE SERVICES
 3. Check the FILE SERVER RESOURCE MANAGER and WINDOWS SEARCH, click NEXT
 4. Select the drives that will take effect the File Services, Volume to Index, then install.
+
 
 Task 6: Installing DHCP (Dynamic Host Configuration Protocol):
 1. Click the Server Manager icon located beside START Button.
@@ -102,7 +186,8 @@ Task 6: Installing DHCP (Dynamic Host Configuration Protocol):
 6. Select the DISABLE DHCP v6....., click NEXT.
 7. Click NEXT, INSTALL
 
-Task 8: Joining the Client PC into Domain (Windows 7).
+
+Task 7: Joining the Client PC into Domain (Windows 7).
 *If there is "SET NETWORK LOCATION", always select WORK.
 1.Click START and type "sysdm.cpl"
 2. click CHANGE
@@ -110,7 +195,7 @@ Task 8: Joining the Client PC into Domain (Windows 7).
 4. Input the Server's Administrator account and password.
 5. After authentication, click OK and Restart the Client PC.
 
-Task 9: Adding user accounts in the domain server.
+Task 8: Adding user accounts in the domain server.
 1. Click START > Administrative Tools > Active Directory Users and Computers
 2. Click the plus (+) of the "domain.nnhs.edu", and right-click the "domain.nnhs.edu", select NEW > ORGANIZATIONAL UNIT.
 3. Input the name of the OU (anything).
@@ -119,7 +204,7 @@ Task 9: Adding user accounts in the domain server.
 6. Input the password of that account, and uncheck all of the other options, click NEXT, FINISH.
 
 
-Task 10: Creating a Shared Resources (Shared Folder for Example)
+Task 9: Creating a Shared Resources (Shared Folder for Example)
 1. Open the COMPUTER in the Desktop
 2. Select the drive where the resources to be shared.
 3. Create a folder for sharing (ex. shares)
@@ -128,7 +213,7 @@ Task 10: Creating a Shared Resources (Shared Folder for Example)
 
 
 
-Task 11: Setting Up FOLDER REDIRECTION
+Task 10: Setting Up FOLDER REDIRECTION
 1. Click START > ADMINISTRATIVE TOOLS > GROUP POLICY MANAGEMENT
 2. Expand (+) FOREST: domain.nnhs.edu , (+)DOMAINS, (+)domain.nnhs.edu , (+)(the created OU earlier), right-click the created OU earlier and select CREATE A GPO IN THIS DOMAIN...
 3. Input (replace) the value for the New GPO (anything), click OK
@@ -139,7 +224,7 @@ Task 11: Setting Up FOLDER REDIRECTION
 8. Back to Group Policy Management, right-click the created GPO, select ENFORCED, and restart the Server.
 
 
-Task 12: Logging IN a domain user.
+Task 11: Logging IN a domain user.
 *(Server must be completely restarted) 
 On the client computer. Do the login procedures of logging in a domain user (via Switch User if the computer is joined a domain for the first time or another domain user account will be used)
 
@@ -152,12 +237,59 @@ Task 13: Setting Up File Screening for file restrictions
 6. To test it, On the Client PC copy the restricted file to the desktop, it should be DENIED Copying.
 
 
-Task 14: Remote Desktop (remote control a client)
-(still in development)
+
+Task 12: Remote Desktop (remote control a client)
+(Set Up the Host PC)
+
+1. Check Windows Edition: The host PC must run Windows Pro, Enterprise, or Education. Windows Home edition does not support being a remote host.
+2. Enable Remote Desktop:  Go to Settings > System > Remote Desktop > Toggle Remote Desktop to On and select Confirm.
+3. Find the PC Name or IP:
+    PC Name: Found under Settings > System > About.
+    IP Address: Open Command Prompt (cmd), type ipconfig, and look for the IPv4 Address under Ethernet or WiFi/WLAN depending of the connection used.
+    Permit Users: By default, admins have access. To allow others, click Select users that can remotely access this PC in the Remote Desktop settings and add their usernames
+                   which is set earlier in the Active Directory.
+
+(Connect from the Client PC)
+Once the host is ready, follow these steps from your local machine: 
+
+1. Launch the App: Press Win + R, type mstsc, and hit Enter.
+2. Enter Details: In the Computer field, type the host's PC Name or IP Address.
+    Authenticate: Click Connect. When prompted, enter the username and password for the host PC.
+    Accept Certificate: If a security warning appears regarding the certificate, click Yes to establish the connection.
+
 
 
 Task 15: Backup Files and Restore from Windows Backup
-(still undevelopment)
+Backup and Restore (Full System Image) Used to create a complete "snapshot" of your entire PC, including the operating system, apps, and all files. 
 
+1. Find Legacy Tool: Go to Control Panel > System and Security > Backup and Restore (Windows 7).
+2. Create Image: Click Create a system image in the left sidebar.
+3. Choose Destination: Select your external drive (must be formatted as NTFS) or via Network Path (Shared Folder).
+4. Confirm & Start: Select the drives to include (usually the C: drive) and click Start backup. 
 
+:
 
+To restore your files, the steps depend on which backup method you used:
+
+Option 1: Restoring Specific Files or Folders
+Use this if your computer is running normally and you just need to get back lost or older versions of data. 
+
+    1. Open the Tool: Go to Control Panel > System and Security > Backup and Restore (Windows 7).
+    2. Initiate Restore: In the Restore section at the bottom, click the Restore my files button.
+    3. Find Your Data:
+           Browse for files: Lets you select individual files from the backup.
+           Browse for folders: Lets you select entire folders.
+           Search: Type a filename to find specific items within the backup.
+    4. Choose Location: Decide if you want to restore the files to their original location or a new folder.
+    5. Finish: Click Restore and wait for the process to complete. 
+
+Option 2: Restoring a Full System Image
+Use this if you need to recover your entire PC (including Windows and apps) to a previous state. Warning: This will replace all current data on your drives with the data from the image. 
+
+    Enter Recovery Mode:
+        In Windows: Go to Settings > System > Recovery and click Restart now next to Advanced startup.
+        If Windows won't boot: Boot from a System Repair Disc or a Windows installation USB.
+    
+    Navigate to Recovery Tool: Once in the blue recovery menu, select Troubleshoot > Advanced options > See more recovery options > System Image Recovery.
+    Select Backup: Connect your external drive. The tool will automatically search for the latest image. You can also manually choose Select a system image to pick an older one.
+    Confirm & Restore: Review the details, click Next, then Finish, and finally Yes to begin the re-imaging process
