@@ -1,3 +1,3 @@
-This repo is still in development and remastering stage.
+This repo is still in ongoing-remastering stage.
 
 -ggccnp
